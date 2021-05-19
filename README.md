@@ -1,1 +1,1 @@
-# zuri-task-basic-js-algorithms
+# zuri Task - Basic JavaScript Algorithms
