@@ -1,17 +1,35 @@
-function convertFahrToCelsius(Far) { 
-  const Cel = (Far - 32) * 5/9
-  const celValue = parseFloat(Cel.toFixed(4))
+// --- (1) First Task --- //
+function convertFahrToCelsius(Fahr) {
+  var cel = (Fahr - 32) * (5/9)
 
-  if (Array.isArray(Far)) {
-    return (JSON.stringify(Far) + ' is not a valid number but a/an array')
+  if (isNaN(Fahr) && typeof(Fahr) !== "string") {
+    if (Array.isArray(Fahr)) {
+      return (
+        JSON.stringify(Fahr) + " is not a valid number but a/an array"
+      )
+    }
+    else {
+      return (
+        JSON.stringify(Fahr) + " is not a valid number but a/an " + typeof(Fahr)
+      )
+    }
+  } 
+
+  else if (typeof(Fahr) === "boolean") {
+    return (
+      JSON.stringify(Fahr) + " is not a valid number but a/an " + typeof(Fahr)
+    )
   }
-  else if (typeof(Far) === "number" && typeof(Far) === "string") {
-    return (JSON.stringify(Far) + ' is not a valid number but a/an ' + typeof(Far))
-  }
-  else if (isNaN(Far)) {
-    return Far + ' is not a valid number but a/an ' + typeof(Far)
-  }
+
   else {
-    return celValue
+    return (
+      parseFloat(cel.toFixed(4))
+    )
   }
 }
+
+convertFahrToCelsius();
+
+
+
+// --- (2) Second Task --- //
