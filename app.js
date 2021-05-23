@@ -11,6 +11,11 @@ function convertFahrToCelsius(param) {
         JSON.stringify(param) + " is not a valid number but a/an array"
       )
     }
+    else if (typeof(param) === "boolean") {
+    return (
+      JSON.stringify(param) + " is not a valid number but a/an boolean"
+    )
+  }
     else {
       return (
         JSON.stringify(param) + " is not a valid number but a/an " + typeof(param)
@@ -18,11 +23,7 @@ function convertFahrToCelsius(param) {
     }
   } 
 
-  else if (typeof(param) === "boolean") {
-    return (
-      JSON.stringify(param) + " is not a valid number but a/an boolean"
-    )
-  }
+  
 
   else {
     return result
