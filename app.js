@@ -5,7 +5,7 @@ function convertFahrToCelsius(param) {
   var calc = (param - 32) * (5/9)
   var result = parseFloat(calc.toFixed(4))
 
-  if (isNaN(param)) {
+  if (isNaN(param) || typeof(param) === "boolean") {
     if (Array.isArray(param)) {
       return (
         JSON.stringify(param) + " is not a valid number but a/an array"
